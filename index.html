@@ -96,12 +96,13 @@
       font-size: 18px;
       line-height: 1.65;
     }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
     .button {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      margin-top: 36px;
       padding: 17px 26px;
+      border: 1.5px solid var(--oranje);
       border-radius: 999px;
       background: var(--oranje);
       color: var(--delft-deep);
@@ -110,7 +111,9 @@
       text-decoration: none;
       transition: background .2s ease, transform .2s ease;
     }
-    .button:hover { background: var(--oranje-hover); transform: translateY(-2px); }
+    .button:hover { background: var(--oranje-hover); border-color: var(--oranje-hover); transform: translateY(-2px); }
+    .button.ghost { background: transparent; border-color: var(--tile-dim); color: var(--tile); }
+    .button.ghost:hover { background: var(--tile); border-color: var(--tile); color: var(--delft-deep); }
     .button svg { width: 18px; height: 18px; }
 
     /* ступенчатый фронтон амстердамского дома */
@@ -133,6 +136,34 @@
       animation: settle 1.4s cubic-bezier(.2, .7, .2, 1) both;
     }
 
+    .contacts { padding-block: 8px 88px; }
+    .contacts h2 {
+      margin: 0 0 28px;
+      font-family: var(--display);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 600;
+      letter-spacing: -.02em;
+    }
+    .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .tile {
+      display: flex;
+      min-height: 190px;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 36px;
+      padding: 22px;
+      border: 1.5px solid var(--tile-dim);
+      background: rgba(16, 36, 79, .5);
+      color: var(--tile);
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .tile-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--tile-dim); font-size: 16px; }
+    .tile-top svg { width: 20px; height: 20px; flex: none; }
+    .tile strong { font-family: var(--display); font-size: 1.1rem; font-weight: 600; overflow-wrap: anywhere; }
+    .tile:hover { background: var(--tile); border-color: var(--tile); color: var(--delft-deep); }
+    .tile:hover .tile-top { color: var(--delft); }
+
     footer {
       display: flex;
       min-height: 72px;
@@ -153,6 +184,8 @@
     }
 
     @media (max-width: 860px) {
+      .tiles { grid-template-columns: 1fr; gap: 14px; }
+      .tile { min-height: 0; gap: 22px; }
       .shell { width: min(100% - 44px, 620px); }
       .hero { grid-template-columns: 1fr; gap: 44px; min-height: auto; padding-block: 36px 56px; }
       .gable-wrap { max-width: 440px; width: 100%; margin-inline: auto 14px; }
@@ -187,15 +220,36 @@
         <p class="note">Заметки из Нидерландов</p>
         <h1 id="page-title">Голландский двор</h1>
         <p class="intro">Места, люди и маленькие открытия. Нидерланды такими, какими они становятся в обычный день.</p>
-        <a class="button" href="https://t.me/golandskiy_dvor" target="_blank" rel="noreferrer">
-          Читать в Telegram
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+        <div class="actions">
+          <a class="button" href="https://t.me/golandskiy_dvor" target="_blank" rel="noreferrer">
+            Читать в Telegram
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="button ghost" href="https://www.tiktok.com/@ilyaandrey" target="_blank" rel="noreferrer">Смотреть в TikTok</a>
+        </div>
       </div>
       <div class="gable-wrap">
         <div class="gable">
           <img src="https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Канал и старинные дома в Амстердаме" fetchpriority="high">
         </div>
+      </div>
+    </section>
+
+    <section class="contacts" id="contacts" aria-labelledby="contacts-title">
+      <h2 id="contacts-title">Где меня найти</h2>
+      <div class="tiles">
+        <a class="tile" href="https://t.me/golandskiy_dvor" target="_blank" rel="noreferrer">
+          <span class="tile-top">Telegram-канал<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <strong>@golandskiy_dvor</strong>
+        </a>
+        <a class="tile" href="https://t.me/andreymar1k" target="_blank" rel="noreferrer">
+          <span class="tile-top">Telegram<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <strong>@andreymar1k</strong>
+        </a>
+        <a class="tile" href="https://www.tiktok.com/@ilyaandrey" target="_blank" rel="noreferrer">
+          <span class="tile-top">TikTok<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <strong>@ilyaandrey</strong>
+        </a>
       </div>
     </section>
   </main>
