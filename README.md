@@ -8,9 +8,6 @@
 
 ## Публикация через GitHub Pages
 
-1. Создайте публичный репозиторий `dutchlife-website` в аккаунте `liashtye`.
-2. Добавьте в репозиторий файлы `index.html` и `README.md`.
-3. В репозитории откройте **Settings → Pages**.
-4. Выберите **Deploy from a branch**, ветку `main` и папку `/ (root)`, затем нажмите **Save**.
+Сайт опубликован в репозитории [`andreymarik14/dutchlife-website`](https://github.com/andreymarik14/dutchlife-website). Чтобы включить публикацию, откройте **Settings → Pages**, выберите **Deploy from a branch**, ветку `main` и папку `/ (root)`, затем нажмите **Save**.
 
-После публикации сайт будет доступен по адресу `https://liashtye.github.io/dutchlife-website/`.
+После включения GitHub Pages сайт будет доступен по адресу `https://andreymarik14.github.io/dutchlife-website/`.
